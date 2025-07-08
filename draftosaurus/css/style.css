@@ -1,0 +1,675 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*responsive*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'PT Sans', 'Arial', sans-serif;
+    background-color: #029999;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    overflow-x: hidden;
+}
+
+/*scroll for container only*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative; 
+    z-index: 1;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items: center;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(2, 183, 183, 0.3);
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation Styling */
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(2, 183, 183, 0.3);
+    z-index: 1;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language {
+    background-image: url('../assets/logo/spanish.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-self: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Section Styling */
+.section, .subsection {
+    display: flex;
+}
+
+#home {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#rules, #setup {
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#board, #results {
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.subsection-row {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    display: flex;
+    width: 94vw;
+}
+
+.subsection-column {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    flex: 1;
+    min-width: 320px;
+    max-width: 45%;
+}
+
+.rules-subsection-dark {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.table {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+    aspect-ratio: 2552/2544;
+    gap: 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.table-side {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+}
+
+.table-center {
+    background-image: url('../assets/img/rio.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 0 0 auto;
+    width: 16%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.field-equality {
+    background-image: url('../assets/img/campo1.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 1;
+    position: relative;
+}
+
+.field-three {
+    background-image: url('../assets/img/campo2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 1;
+    position: relative;
+}
+
+.field-love {
+    background-image: url('../assets/img/campo3.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 1;
+    position: relative;
+}
+
+.field-king {
+    background-image: url('../assets/img/campo4.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 1;
+    position: relative;
+}
+
+.field-diversity {
+    background-image: url('../assets/img/campo5.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 1;
+    position: relative;
+}
+
+.field-one {
+    background-image: url('../assets/img/campo6.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    flex: 1;
+    position: relative;
+}
+
+.summer-table-cover {
+    background-image: url('../assets/img/summertable.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 330px;
+}
+
+.winter-table-cover {
+    background-image: url('../assets/img/wintertable.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 450px;
+}
+
+/*Fonts*/
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-left: 10px;
+}
+
+h2, h3 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.setup-section-h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/*Section Inicio*/
+#home {
+    margin-top: 50vh;
+}
+
+button:hover {
+    background-color: rgba(0, 183, 183, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.button {
+    width: 25vw;
+    padding: 10px;
+    background-color: rgba(0, 128, 128, 0.6);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
+    margin-top: 10px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/*Rules-section*/
+
+.welcome {
+color: black;
+text-shadow: none;
+}
+
+.rules-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-bottom: 25px;
+}
+
+.about {
+    margin-top: 25px;
+    min-width: 298px;
+}
+
+.players-number {
+    padding-bottom: 20px;
+}
+
+.player-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.icon-img-2 {
+    background-image: url('../assets/icons/players-2.png');
+}
+
+.icon-img-3 {
+    background-image: url('../assets/icons/players-3.png');
+}
+
+.icon-img-4 {
+    background-image: url('../assets/icons/players-4.png');
+}
+
+.icon-img-5 {
+    background-image: url('../assets/icons/players-5.png');
+}
+
+.forest {
+    background-image: url('../assets/icons/bosque.png');
+}
+
+.planes {
+    background-image: url('../assets/icons/llanura.png');
+}
+
+.wc {
+    background-image: url('../assets/icons/wc.png');
+}
+
+.cafe {
+    background-image: url('../assets/icons/cafe.png');
+}
+
+.empty {
+    background-image: url('../assets/icons/vacio.png');
+}
+
+.trex {
+    background-image: url('../assets/icons/trex.png');
+}
+
+.icon-wrapper:hover .icon-img {
+  transform: scale(1.1);
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: 200px;
+  background-color: rgba(0,0,0,0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.75) transparent transparent transparent;
+}
+
+.icon-wrapper:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.rules-section, .players-modo-setup, .results-section {
+    border: 6px solid mediumseagreen;
+    border-radius: 15%;
+    color: black;
+    background-color: antiquewhite;
+}
+
+.rules-section h3, .players-modo-setup h2, .players-modo-setup h3, .results-section h2 {
+    color: black;
+    text-shadow: none;
+}
+
+.text {
+    max-width: 400px;
+    min-width: 298px;
+    text-align: center;
+}
+
+li {
+    max-width: 250px;
+    text-align: left;
+}
+
+.rule {
+    align-self: center;
+}
+
+.players-modo-setup {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    min-width: 320px;
+}
+
+.icon-summer-button {
+    background-image: url(../assets/icons/summer-button.png);
+}
+
+.icon-winter-button {
+    background-image: url(../assets/icons/winter-button.png);
+}
+
+/*Dino panel*/
+.dinosaurs-panel {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.dino {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    cursor: grab;
+    margin: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    user-select: none;
+}
+
+/* Media Queries*/
+@media (max-width: 768px) {
+    .table {
+        flex-direction: row;
+        max-width: 100%;
+        aspect-ratio: unset;
+        height: auto;
+        min-height: 50vh;
+        padding: 10px;
+    }
+    
+    .table-side {
+        flex-direction: column;
+        flex: 1;
+        min-height: 300px;
+    }
+    
+    .table-center {
+        flex: 0 0 auto;
+        width: 16%;
+        min-height: 300px;
+    }
+    
+    .field-equality,
+    .field-three,
+    .field-love,
+    .field-king,
+    .field-diversity,
+    .field-one {
+        flex: 1;
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table {
+        min-height: 40vh;
+        padding: 8px;
+    }
+    
+    .table-side {
+        min-height: 240px;
+    }
+    
+    .table-center {
+        width: 16%;
+        min-height: 240px;
+    }
+    
+    .field-equality,
+    .field-three,
+    .field-love,
+    .field-king,
+    .field-diversity,
+    .field-one {
+        min-height: 80px;
+    }
+}
+
+.table-side div,
+.table-center {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.table-side div + div {
+    margin-top: 0;
+}
+
+.field-equality,
+.field-three,
+.field-love {
+    border-right: none;
+}
+
+.field-king,
+.field-diversity,
+.field-one {
+    border-left: none;
+}
+
+.table-center {
+    border-left: none;
+    border-right: none;
+}
+
+
+.field-equality,
+.field-three,
+.field-love,
+.field-king,
+.field-diversity,
+.field-one {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+
+.table-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+
+.field-equality .dino,
+.field-three .dino,
+.field-love .dino,
+.field-king .dino,
+.field-diversity .dino,
+.field-one .dino {
+    position: relative;
+    width: 45px !important;
+    height: 45px !important;
+    line-height: 45px !important;
+    margin: 1px !important;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    border: 2px solid rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    font-size: 10px;
+}
+
+
+.table-center .dino {
+    position: relative;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    margin: 1px !important;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    border: 2px solid rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    font-size: 9px;
+}
+
+
+.field-equality:hover,
+.field-three:hover,
+.field-love:hover,
+.field-king:hover,
+.field-diversity:hover,
+.field-one:hover,
+.table-center:hover {
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
+    transition: box-shadow 0.2s ease;
+}
+
