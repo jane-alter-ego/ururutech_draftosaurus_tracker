@@ -101,10 +101,13 @@ nav {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 50px;
 }
 
-#rules, #setup {
+#home {
+    margin-top: 50vh;
+}
+
+#rules, #tracking, #account {
     width: 100vw;
     flex-direction: column;
     align-items: center;
@@ -112,7 +115,34 @@ nav {
     text-align: center;
 }
 
-#board, #results {
+#board {
+    width: 100vw;
+    height: calc(100vh - 60px); /* Высота экрана минус высота навигации / Altura de pantalla menos altura de navegación */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Распределяем элементы равномерно / Distribuimos elementos uniformemente */
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    justify-content: flex-start;
+    gap: 5px; /* Минимальное расстояние между элементами / Distancia mínima entre elementos */
+}
+
+#board .button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+#results {
     width: 100vw;
     flex-direction: column;
     align-items: center;
@@ -156,16 +186,18 @@ nav {
     align-items: stretch;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    max-width: 1200px;
+    width: auto; /* Позволяем таблице определять свою ширину / Permitimos a la tabla determinar su ancho */
+    max-width: 90vw; /* Ограничиваем максимальную ширину / Limitamos el ancho máximo */
+    height: 75vh; /* Фиксированная высота 75% экрана / Altura fija 75% de la pantalla */
     margin: 0 auto;
     position: relative;
     overflow: visible;
-    aspect-ratio: 2552/2544;
+    aspect-ratio: 2552/2544; /* Сохраняем пропорции / Conservamos las proporciones */
     gap: 0;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    flex-shrink: 0;
 }
 
 .table-side {
@@ -272,16 +304,12 @@ h2, h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.setup-section-h2 {
+.tracking-section-h2 {
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
 /*Section Inicio*/
-#home {
-    margin-top: 50vh;
-}
-
 button:hover {
     background-color: rgba(0, 183, 183, 0.5);
     transition: background-color 0.3s ease;
@@ -318,7 +346,7 @@ color: black;
 text-shadow: none;
 }
 
-.rules-section {
+.rules-section, .registration, .message, .login, .profile, .result {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -443,14 +471,14 @@ text-shadow: none;
   opacity: 1;
 }
 
-.rules-section, .players-modo-setup, .results-section {
+.rules-section, .players-modo-tracking, .results-section, .registration, .message, .login, .profile, .result {
     border: 6px solid mediumseagreen;
     border-radius: 15%;
     color: black;
     background-color: antiquewhite;
 }
 
-.rules-section h3, .players-modo-setup h2, .players-modo-setup h3, .results-section h2 {
+.rules-section h3, .players-modo-tracking h2, .players-modo-tracking h3, .results-section h2, .registration h2, .message h2, .login h2, .profile h2, .result h2 {
     color: black;
     text-shadow: none;
 }
@@ -470,7 +498,7 @@ li {
     align-self: center;
 }
 
-.players-modo-setup {
+.players-modo-tracking {
     margin-top: 20px;
     margin-bottom: 20px;
     padding-left: 30px;
@@ -492,11 +520,16 @@ li {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    max-width: 90vw;
+    padding: 8px;
     background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
     flex-wrap: wrap;
+    flex-shrink: 0;
+    height: 15vh; /* Фиксированная высота 15% экрана / Altura fija 15% de la pantalla */
+    overflow-y: auto;
 }
 
 .dino {
@@ -511,6 +544,46 @@ li {
     margin: 5px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     user-select: none;
+    background-size: cover;
+    background-position: center;
+    background-color:beige;
+}
+
+
+.tRex {
+    background-image: url('../assets/icons/tiran.png');
+}
+
+.stegosaurus {
+    background-image: url('../assets/icons/stego.png');
+}
+
+.brontosaurus {
+    background-image: url('../assets/icons/bronto.png');
+}
+
+.triceratops {
+    background-image: url('../assets/icons/trice.png');
+}
+
+.iguanodon {
+    background-image: url('../assets/icons/iguano.png');
+}
+
+.spinosaurus {
+    background-image: url('../assets/icons/spino.png');
+}
+
+.results-text {
+    max-width: 400px;
+    min-width: 298px;
+    padding-left: 10px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.results-text li {
+    max-width: 400px;
 }
 
 /* Media Queries*/
@@ -671,5 +744,368 @@ li {
 .table-center:hover {
     box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
     transition: box-shadow 0.2s ease;
+}
+
+/* Manual Carousel Styles */
+.manual-carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(0, 128, 128, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.manual-title {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.manual-carousel {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.manual-page {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #fff;
+}
+
+.page-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* Responsive Design for Manual Carousel */
+@media (max-width: 768px) {
+    .manual-carousel-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+    
+    .manual-carousel {
+        height: 400px;
+    }
+    
+    .manual-title {
+        font-size: 20px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    /* Tablet adaptations for board section */
+    .table {
+        height: 65vh;
+        width: 95vw; /* Используем почти всю ширину экрана / Usamos casi todo el ancho de la pantalla */
+        max-width: none; /* Убираем ограничение max-width / Removemos la limitación max-width */
+        padding: 8px;
+        aspect-ratio: auto; /* Отключаем фиксированные пропорции / Desactivamos las proporciones fijas */
+    }
+    
+    .dinosaurs-panel {
+        height: 20vh; /* Увеличиваем панель динозавров / Aumentamos el panel de dinosaurios */
+        max-width: 95vw;
+        padding: 6px;
+    }
+    
+    .dino {
+        width: 65px;
+        height: 65px;
+        line-height: 65px;
+        margin: 3px;
+    }
+    
+    .game-content {
+        gap: 4px;
+    }
+    
+    /* Увеличиваем минимальные размеры игровых полей на планшетах / Aumentamos los tamaños mínimos de campos de juego en tablets */
+    .table-side div,
+    .table-center {
+        min-height: 80px;
+    }
+    
+    .table-side {
+        min-width: 120px;
+    }
+    
+    .table-center {
+        min-width: 60px;
+    }
+}
+
+/* Medium screens (between mobile and tablet) */
+@media (max-width: 600px) {
+    .table {
+        height: 62vh;
+        width: 96vw;
+        max-width: none;
+        padding: 6px;
+        aspect-ratio: auto;
+    }
+    
+    .dinosaurs-panel {
+        height: 22vh;
+        max-width: 96vw;
+        padding: 5px;
+    }
+    
+    .dino {
+        width: 58px;
+        height: 58px;
+        line-height: 58px;
+        margin: 2px;
+    }
+    
+    .table-side div,
+    .table-center {
+        min-height: 75px;
+    }
+    
+    .table-side {
+        min-width: 110px;
+    }
+    
+    .table-center {
+        min-width: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .manual-carousel {
+        height: 300px;
+    }
+    
+    .manual-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+    
+    .carousel-indicators {
+        bottom: 10px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Mobile adaptations for board section */
+    #board {
+        height: calc(100vh - 50px);
+        padding: 5px;
+    }
+    
+    .table {
+        height: 60vh; /* 60% на мобильных / 60% en móviles */
+        width: 98vw; /* Используем почти всю ширину экрана / Usamos casi todo el ancho de la pantalla */
+        max-width: none; /* Убираем ограничение max-width / Removemos la limitación max-width */
+        padding: 5px;
+        aspect-ratio: auto; /* Отключаем фиксированные пропорции на мобильных / Desactivamos las proporciones fijas en móviles */
+    }
+    
+    .dinosaurs-panel {
+        height: 25vh; /* Увеличиваем панель для удобства на мобильных / Aumentamos el panel para comodidad en móviles */
+        padding: 5px;
+        max-width: 98vw;
+    }
+    
+    .dino {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        margin: 2px;
+    }
+    
+    .game-content {
+        gap: 2px; /* Минимальные расстояния на мобильных / Distancias mínimas en móviles */
+    }
+    
+    /* Увеличиваем минимальные размеры игровых полей на мобильных / Aumentamos los tamaños mínimos de campos de juego en móviles */
+    .table-side div,
+    .table-center {
+        min-height: 70px;
+    }
+    
+    .table-side {
+        min-width: 100px;
+    }
+    
+    .table-center {
+        min-width: 50px;
+    }
+}
+
+/*Styles for user_profile*/
+#play, .account-subsection-row {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.registration, .message, .login, .profile, .result {
+    max-width: 350px;
+}
+
+.registration, .profile, .result {
+    margin-top: 10px;
+}
+
+.registration button, .login button, .profile button {
+    max-width: 200px;
+}
+
+.registration label, .login label, .profile label, .result label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.registration input, .login input, .profile input, .result input {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.message a, .profile a {
+    max-width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 128, 128, 0.6);
+    align-self: center;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
+}
+
+a:hover {
+    background-color: rgba(0, 183, 183, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.profile a {
+    margin-top: 10px;
 }
 
